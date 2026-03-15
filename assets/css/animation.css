@@ -1,0 +1,446 @@
+/* ============================================================
+   ANIMACIONES PREMIUM GOLD – Draft Design Web
+   Microinteracciones, efectos 3D, reflejos dorados y lujo visual
+============================================================ */
+
+/* ============================================================
+   ADVERTENCIA SOBRE 'mask' Y '-webkit-mask'
+   -----------------------------------------
+   ✔ 'mask' es estándar (Chrome, Edge, Safari)
+   ✔ '-webkit-mask' es necesaria para WebKit/Blink
+   ⚠ Firefox NO soporta ninguna
+   ✔ Fallback incluido en .border-animated
+============================================================ */
+
+/* -----------------------------------
+   Fade-in básico (suave y elegante)
+----------------------------------- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: fadeInUp 0.75s cubic-bezier(0.25, 0.9, 0.25, 1) forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -----------------------------------
+   Fade-in lateral
+----------------------------------- */
+.fade-left {
+  opacity: 0;
+  transform: translateX(-28px);
+  animation: fadeLeft 0.75s cubic-bezier(0.25, 0.9, 0.25, 1) forwards;
+}
+@keyframes fadeLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-right {
+  opacity: 0;
+  transform: translateX(28px);
+  animation: fadeRight 0.75s cubic-bezier(0.25, 0.9, 0.25, 1) forwards;
+}
+@keyframes fadeRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* -----------------------------------
+   Fade + Scale (entrada premium)
+----------------------------------- */
+.fade-scale {
+  opacity: 0;
+  transform: scale(0.88);
+  animation: fadeScale 0.85s cubic-bezier(0.25, 0.9, 0.25, 1) forwards;
+}
+@keyframes fadeScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* -----------------------------------
+   Fade + Blur cinematográfico
+----------------------------------- */
+.fade-blur {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(22px);
+  animation: fadeBlur 1s ease forwards;
+}
+@keyframes fadeBlur {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(22px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+/* -----------------------------------
+   Stagger (entrada escalonada)
+----------------------------------- */
+.stagger > * {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: staggerIn 0.55s cubic-bezier(0.25, 0.9, 0.25, 1) forwards;
+}
+.stagger > *:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.stagger > *:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.stagger > *:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.stagger > *:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.stagger > *:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+@keyframes staggerIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -----------------------------------
+   Hover glow GOLD (brillo cálido)
+----------------------------------- */
+.hover-glow {
+  transition:
+    box-shadow 0.35s ease,
+    transform 0.25s ease;
+}
+.hover-glow:hover {
+  box-shadow: 0 14px 38px rgba(201, 168, 106, 0.35);
+  transform: translateY(-6px);
+}
+
+/* -----------------------------------
+   Hover 3D con reflejo dorado
+----------------------------------- */
+.hover-3d {
+  transition:
+    transform 0.45s cubic-bezier(0.2, 0.9, 0.2, 1),
+    filter 0.45s ease;
+  transform-style: preserve-3d;
+}
+.hover-3d:hover {
+  transform: rotateX(7deg) rotateY(-7deg);
+  filter: drop-shadow(0 0 12px rgba(201, 168, 106, 0.45));
+}
+
+/* -----------------------------------
+   Subrayado GOLD
+----------------------------------- */
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  width: 70%;
+  height: 2px;
+  background: linear-gradient(90deg, #c9a86a, #e3c68b, #c9a86a);
+  transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+.link-underline:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* -----------------------------------
+   Reveal on scroll
+----------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px) scale(0.96);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* -----------------------------------
+   CTA Pulse GOLD
+----------------------------------- */
+.cta-pulse {
+  animation: pulseGold 2.8s infinite;
+}
+@keyframes pulseGold {
+  0% {
+    box-shadow: 0 0 0 0 rgba(201, 168, 106, 0.15);
+  }
+  70% {
+    box-shadow: 0 0 0 22px rgba(201, 168, 106, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(201, 168, 106, 0);
+  }
+}
+
+/* -----------------------------------
+   Card tilt 3D GOLD
+----------------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+  .card-tilt {
+    transition:
+      transform 0.35s cubic-bezier(0.2, 0.9, 0.2, 1),
+      box-shadow 0.35s;
+    transform-origin: center;
+  }
+  .card-tilt:hover {
+    transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateY(-8px);
+    box-shadow: 0 22px 50px rgba(201, 168, 106, 0.45);
+  }
+}
+
+/* -----------------------------------
+   Borde animado GOLD (oro líquido)
+----------------------------------- */
+.border-animated {
+  position: relative;
+  border: 1px solid rgba(201, 168, 106, 0.25);
+  border-radius: 12px;
+}
+
+.border-animated::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+
+  background: linear-gradient(120deg, #c9a86a, #e3c68b, #c9a86a);
+  background-size: 200% 200%;
+  animation: borderGoldFlow 3s ease infinite;
+
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+@keyframes borderGoldFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* -----------------------------------
+   SVG stroke draw GOLD
+----------------------------------- */
+.svg-draw path,
+.svg-draw circle,
+.svg-draw rect {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  stroke: #c9a86a !important;
+  animation: drawGold 1.6s ease forwards;
+}
+@keyframes drawGold {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* -----------------------------------
+   SVG glow GOLD
+----------------------------------- */
+.svg-glow {
+  transition: filter 0.3s ease;
+}
+.svg-glow:hover {
+  filter: drop-shadow(0 0 12px rgba(201, 168, 106, 0.75));
+}
+
+/* -----------------------------------
+   Loader GOLD
+----------------------------------- */
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 3px solid rgba(201, 168, 106, 0.15);
+  border-top-color: #c9a86a;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* -----------------------------------
+   Botón con brillo dorado
+----------------------------------- */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: shineGold 3s infinite;
+}
+@keyframes shineGold {
+  0% {
+    left: -120%;
+  }
+  60% {
+    left: 140%;
+  }
+  100% {
+    left: 140%;
+  }
+}
+
+/* -----------------------------------
+   Luxury fade GOLD
+----------------------------------- */
+.luxury-fade {
+  opacity: 0;
+  filter: blur(6px);
+  transform: translateY(24px);
+  animation: luxuryFadeGold 1.2s ease forwards;
+}
+@keyframes luxuryFadeGold {
+  0% {
+    opacity: 0;
+    filter: blur(6px);
+    transform: translateY(24px);
+  }
+  60% {
+    opacity: 0.75;
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+/* -----------------------------------
+   Zoom-in GOLD
+----------------------------------- */
+.zoom-in {
+  opacity: 0;
+  transform: scale(0.82);
+  animation: zoomInGold 0.85s cubic-bezier(0.25, 0.9, 0.25, 1) forwards;
+}
+@keyframes zoomInGold {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* -----------------------------------
+   Slide-up GOLD
+----------------------------------- */
+.slide-up {
+  opacity: 0;
+  transform: translateY(32px);
+  animation: slideUpGold 0.9s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+}
+@keyframes slideUpGold {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*------------------------------------
+   Bounce-in GOLD LOGO
+------------------------------------*/
+/* Contenedor del logo */
+.logo {
+  position: relative;
+  display: inline-block;
+}
+
+/* Imagen del logo */
+.logo-img {
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Destello dorado exterior lateral */
+.logo::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -10px; /* destello por fuera */
+  transform: translateY(-50%);
+  width: 1px;
+  height: 0%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(201, 168, 106, 0.9),
+    transparent
+  );
+  border-radius: 3px;
+  opacity: 0;
+  transition:
+    opacity 0.25s ease,
+    height 0.35s ease;
+  pointer-events: none;
+}
+
+/* Activación del destello */
+.logo:hover::after {
+  opacity: 1;
+  height: 55%; /* crece suavemente */
+}
