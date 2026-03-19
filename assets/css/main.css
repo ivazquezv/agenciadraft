@@ -402,6 +402,14 @@ section:hover::before {
   line-height: 1.5;
   opacity: 0.9;
 }
+.service-card,
+.service-card:link,
+.service-card:visited,
+.service-card:hover,
+.service-card:active {
+  text-decoration: none;
+  color: inherit;
+}
 
 /* RESPONSIVE */
 @media (max-width: 992px) {
