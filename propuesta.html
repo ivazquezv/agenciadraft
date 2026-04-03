@@ -152,8 +152,12 @@
 
         <div class="contact-separator"></div>
 
-        <form name="propuesta" method="POST" data-netlify="true" class="contact-form">
+        <form name="propuesta" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/gracias.html"
+            class="contact-form">
+
+            <!-- Campos ocultos obligatorios -->
             <input type="hidden" name="form-name" value="propuesta">
+            <input type="hidden" name="bot-field">
 
             <!-- Datos básicos -->
             <div class="form-group">
@@ -250,6 +254,7 @@
                 Enviar propuesta
             </button>
         </form>
+
 
         <div class="contact-separator"></div>
     </div>
