@@ -261,8 +261,11 @@
         <!-- Separador superior -->
         <div class="contact-separator"></div>
 
-        <form name="contacto" method="POST" data-netlify="true" class="contact-form">
+        <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
+
+            <!-- Campos ocultos obligatorios -->
             <input type="hidden" name="form-name" value="contacto">
+            <input type="hidden" name="bot-field">
 
             <div class="form-group">
                 <i class="ph ph-user"></i>
@@ -324,6 +327,7 @@
                 Reservar cita
             </a>
         </form>
+
 
         <!-- Separador inferior -->
         <div class="contact-separator"></div>
