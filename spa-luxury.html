@@ -224,7 +224,7 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <p>© 2026 Draft Design Web. Todos los derechos reservados.</p>
+            <p>© <span id="footer-year"></span> Draft Design Web. Todos los derechos reservados.</p>
 
             <div class="contact-separator"></div>
 
@@ -305,6 +305,14 @@
                 nav.classList.remove("scrolled");
             }
         });
+    </script>
+
+    <!-- Año actual -->
+    <script>
+        const startYear = 2015;
+        const currentYear = new Date().getFullYear();
+        const yearText = startYear === currentYear ? startYear : `${startYear} - ${currentYear}`;
+        document.getElementById("footer-year").textContent = yearText;
     </script>
 
 </body>

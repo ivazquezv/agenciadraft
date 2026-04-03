@@ -109,18 +109,65 @@
     <!-- SOBRE NOSOTROS -->
     <section id="about" class="about reveal">
         <div class="container">
+
             <h2>
                 <i class="ph ph-user-focus" style="color:#c9a86a; font-size:28px; margin-right:8px;"></i>
                 Tu agencia boutique de diseño web
             </h2>
 
-            <p>
-                En Draft Design Web creamos experiencias digitales exclusivas para marcas que buscan transmitir
-                elegancia, profesionalidad y diferenciación. Dirigida por <strong>Iván Vázquez</strong>, nuestra
-                agencia combina diseño, estrategia y tecnología para elevar tu presencia online.
-            </p>
+            <div class="about-content">
+
+                <div class="about-text">
+
+                    <p>
+                        <i class="ph ph-sparkle" style="color:#c9a86a; font-size:20px; margin-right:6px;"></i>
+                        <strong>Draft Design Web</strong> es un estudio boutique especializado en crear experiencias
+                        digitales exclusivas para marcas que buscan destacar con elegancia, precisión y una identidad
+                        visual inconfundible.
+                    </p>
+
+                    <p>
+                        <i class="ph ph-user-circle-gear" style="color:#c9a86a; font-size:20px; margin-right:6px;"></i>
+                        Bajo la dirección creativa de <strong>Iván Vázquez</strong>, cada proyecto se desarrolla con un
+                        enfoque artesanal, combinando diseño, estrategia y tecnología para construir plataformas
+                        digitales
+                        que transmiten lujo, autoridad y diferenciación real.
+                    </p>
+
+                    <div class="about-image premium-frame">
+                        <img src="/assets/images/ceo/ivan.vazquez-vidador.jpg"
+                            alt="Iván Vázquez — Fundador & Director Creativo" loading="lazy">
+
+                        <span class="photo-caption">
+                            Iván Vázquez <br>Fundador & Director Creativo
+                        </span>
+                    </div>
+
+
+
+
+                    <p>
+                        <i class="ph ph-users-three" style="color:#c9a86a; font-size:20px; margin-right:6px;"></i>
+                        Contamos con un equipo selecto de especialistas que intervienen únicamente cuando el proyecto lo
+                        requiere, garantizando un proceso curado, discreto y profundamente orientado a resultados.
+                        Trabajamos con un número limitado de clientes al año para asegurar una dedicación absoluta y un
+                        nivel de detalle que solo un estudio boutique puede ofrecer.
+                    </p>
+
+                    <p>
+                        <i class="ph ph-arrow-up-right" style="color:#c9a86a; font-size:20px; margin-right:6px;"></i>
+                        Si tu marca aspira a elevar su presencia digital y proyectar exclusividad en cada interacción,
+                        este es tu lugar.
+                    </p>
+
+                </div>
+
+            </div>
         </div>
     </section>
+
+
+
 
     <!-- SERVICIOS -->
     <section id="servicios" class="services reveal">
@@ -287,7 +334,8 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <p>© 2026 Draft Design Web. Todos los derechos reservados.</p>
+            <p>© <span id="footer-year"></span> Draft Design Web. Todos los derechos reservados.</p>
+
 
             <!-- Separador inferior -->
             <div class="contact-separator"></div>
@@ -322,8 +370,8 @@
         <i class="ph ph-arrow-up"></i>
     </button>
 
+    /* --- Menú responsive --- */
     <script>
-        /* --- Menú responsive --- */
         const toggle = document.getElementById('nav-toggle');
         const menu = document.getElementById('nav-menu');
         const html = document.documentElement;
@@ -385,6 +433,13 @@
         });
     </script>
 
+    <!-- Año actual -->
+    <script>
+        const startYear = 2015;
+        const currentYear = new Date().getFullYear();
+        const yearText = startYear === currentYear ? startYear : `${startYear} - ${currentYear}`;
+        document.getElementById("footer-year").textContent = yearText;
+    </script>
 
 
 </body>
