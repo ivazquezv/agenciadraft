@@ -563,3 +563,36 @@ svg {
   color: #777;
   font-size: 0.85rem;
 }
+
+/* Botón volver a DRAFT */
+.footer-draft {
+  margin-top: 40px;
+}
+
+.btn-draft {
+  background: transparent;
+  border: 2px solid #c6a667;
+  color: #c6a667;
+  padding: 12px 26px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  transition: all 0.35s ease;
+}
+
+.btn-draft svg {
+  stroke: #c6a667;
+  transition: transform 0.35s ease;
+}
+
+.btn-draft:hover {
+  background: #c6a667;
+  color: #fff;
+}
+
+.btn-draft:hover svg {
+  stroke: #fff;
+  transform: translateX(-4px);
+}

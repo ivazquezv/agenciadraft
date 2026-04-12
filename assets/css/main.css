@@ -835,3 +835,41 @@ section:hover::before {
   );
   margin: 20px 0;
 }
+/* -----------------------------------------
+   SECCIÓN DEMO — CTA PREMIUM
+----------------------------------------- */
+
+.demo {
+  text-align: center;
+}
+
+.btn-demo {
+  background: #c6a667;
+  color: #fff;
+  padding: 14px 34px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  transition: all 0.35s ease;
+  box-shadow: 0 6px 18px rgba(198, 166, 103, 0.25);
+
+  text-decoration: none;
+  margin-bottom: 40px; /* ← ESPACIO INFERIOR ELEGANTE */
+}
+
+.btn-demo svg {
+  stroke: #fff;
+  transition: transform 0.35s ease;
+}
+
+.btn-demo:hover {
+  background: #a88b4f;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(168, 139, 79, 0.35);
+}
+
+.btn-demo:hover svg {
+  transform: translateX(4px);
+}
