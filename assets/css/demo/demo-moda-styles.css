@@ -1,0 +1,565 @@
+/* -----------------------------------------
+   FUENTES PREMIUM
+----------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap");
+
+/* -----------------------------------------
+   RESET EDITORIAL
+----------------------------------------- */
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #fff;
+  color: #111;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* -----------------------------------------
+   FIX ICONOS SVG — evitar cortes y alineación
+----------------------------------------- */
+svg {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: visible;
+}
+
+.nav svg,
+.nav-links svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.8;
+}
+
+.section-title svg {
+  width: 28px;
+  height: 28px;
+  stroke-width: 1.8;
+  margin-bottom: -3px;
+}
+
+.collection h3 svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 1.8;
+  margin-bottom: -2px;
+}
+
+.btn svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+}
+
+/* -----------------------------------------
+   BOTONES PREMIUM
+----------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 34px;
+  min-width: 220px; /* ancho mínimo elegante */
+  border-radius: 12px;
+
+  background: #c6a667;
+  color: #fff;
+
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+
+  border: none;
+  cursor: pointer;
+
+  transition: all 0.35s ease;
+  box-shadow: 0 6px 18px rgba(198, 166, 103, 0.25);
+}
+
+.btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: #fff;
+  stroke-width: 2;
+  transition: transform 0.35s ease;
+}
+
+.btn:hover {
+  background: #a88b4f;
+  box-shadow: 0 10px 26px rgba(168, 139, 79, 0.35);
+  transform: translateY(-2px);
+}
+
+.btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* Versión outline (si la necesitas más adelante) */
+.btn-outline {
+  background: transparent;
+  color: #c6a667;
+  border: 2px solid #c6a667;
+  box-shadow: none;
+}
+
+.btn-outline svg {
+  stroke: #c6a667;
+}
+
+.btn-outline:hover {
+  background: #c6a667;
+  color: #fff;
+}
+
+.btn-outline:hover svg {
+  stroke: #fff;
+}
+
+/* -----------------------------------------
+   NAV PREMIUM
+----------------------------------------- */
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  z-index: 9999;
+}
+
+/* Evitar que animaciones afecten al NAV */
+.nav,
+.nav * {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.nav nav ul {
+  display: flex;
+  gap: 40px;
+}
+
+.nav nav ul li a {
+  color: #c6a667;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.nav nav ul li a:hover {
+  color: #a88b4f;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  height: 42px;
+}
+
+.logo-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #c6a667;
+  letter-spacing: 1px;
+}
+
+.logo-text span {
+  color: #a88b4f;
+}
+
+/* -----------------------------------------
+   BOTÓN HAMBURGUESA
+----------------------------------------- */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.menu-toggle svg {
+  width: 28px;
+  height: 28px;
+  stroke: #c6a667;
+  stroke-width: 2;
+}
+
+/* -----------------------------------------
+   NAV MOBILE
+----------------------------------------- */
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    background: #fff;
+    border: 2px solid #c6a667;
+    border-radius: 14px;
+    padding: 20px;
+    width: 220px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: all 0.35s ease;
+    box-shadow: 0 12px 28px rgba(198, 166, 103, 0.25);
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-links ul {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .nav-links a {
+    font-weight: 600;
+    color: #c6a667;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+/* -----------------------------------------
+   SECCIONES
+----------------------------------------- */
+.section {
+  padding: 100px 60px; /* antes 160px arriba */
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+@media (max-width: 600px) {
+  .section {
+    padding: 60px 24px;
+  }
+}
+
+/* -----------------------------------------
+   HERO
+----------------------------------------- */
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #444;
+}
+
+.hero-image img {
+  width: 520px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #f8f8f8;
+  border-radius: 4px;
+}
+
+.hero-head {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+/* -----------------------------------------
+   COLECCIÓN
+----------------------------------------- */
+
+.collection {
+  text-align: center;
+}
+
+.collection .section-title {
+  font-size: 2.8rem;
+  color: #c6a667;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.collection .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.collection .item {
+  background: #fff;
+  border: none;
+  border-radius: 18px;
+  padding: 24px;
+  transition: all 0.4s ease;
+}
+
+.collection .item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(198, 166, 103, 0.25);
+}
+
+.collection .image-wrapper {
+  overflow: hidden;
+  border-radius: 14px;
+  border: 2px solid #c6a667;
+}
+
+.collection .image-wrapper img {
+  width: 100%;
+  aspect-ratio: 3 / 5;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.collection .item:hover img {
+  transform: scale(1.05);
+}
+
+.collection h3 {
+  font-size: 1.3rem;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* -----------------------------------------
+   ANIMACIONES SCROLL
+----------------------------------------- */
+.fade-in,
+.fade-up,
+.slide-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* -----------------------------------------
+   RESPONSIVE
+----------------------------------------- */
+@media (max-width: 1200px) {
+  .section {
+    padding: 140px 40px 80px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .collection .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav {
+    padding: 18px 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav {
+    padding: 16px 24px;
+  }
+
+  .section {
+    padding: 120px 24px 60px;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .collection .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* -----------------------------------------
+   LÍNEA DORADA ULTRA PREMIUM — efecto glide
+----------------------------------------- */
+
+.section {
+  position: relative;
+}
+
+/* Línea inicial: extremadamente fina, casi invisible */
+.section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 0%;
+  height: 1px; /* más fina */
+  background: linear-gradient(
+    90deg,
+    rgba(198, 166, 103, 0) 0%,
+    rgba(198, 166, 103, 0.9) 40%,
+    rgba(198, 166, 103, 1) 60%,
+    rgba(198, 166, 103, 0) 100%
+  );
+
+  opacity: 0;
+  transform: translateY(2px); /* efecto flotante */
+  transition:
+    width 0.9s cubic-bezier(0.25, 0.1, 0.25, 1),
+    opacity 0.4s ease,
+    transform 0.6s ease;
+  pointer-events: none;
+}
+
+/* Hover: línea se desplaza suavemente de izquierda a derecha */
+.section:hover::after {
+  width: 100%;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -----------------------------------------
+   FOOTER PREMIUM EDITORIAL
+----------------------------------------- */
+
+.footer {
+  background: #111;
+  color: #eee;
+  padding: 80px 40px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  color: #c6a667;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.footer-logo span {
+  color: #a88b4f;
+}
+
+.footer-desc {
+  max-width: 600px;
+  margin: 20px auto 40px;
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 26px;
+  margin-bottom: 40px;
+}
+
+.footer-links a {
+  color: #c6a667;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #a88b4f;
+}
+
+.footer-copy {
+  color: #777;
+  font-size: 0.85rem;
+}
