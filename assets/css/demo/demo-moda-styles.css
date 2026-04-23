@@ -54,7 +54,7 @@ ul {
 }
 
 /* -----------------------------------------
-   FIX ICONOS SVG — evitar cortes y alineación
+   FIX ICONOS SVG
 ----------------------------------------- */
 svg {
   display: inline-block;
@@ -67,93 +67,6 @@ svg {
   width: 20px;
   height: 20px;
   stroke-width: 1.8;
-}
-
-.section-title svg {
-  width: 28px;
-  height: 28px;
-  stroke-width: 1.8;
-  margin-bottom: -3px;
-}
-
-.collection h3 svg {
-  width: 22px;
-  height: 22px;
-  stroke-width: 1.8;
-  margin-bottom: -2px;
-}
-
-.btn svg {
-  width: 20px;
-  height: 20px;
-  margin-right: 6px;
-}
-
-/* -----------------------------------------
-   BOTONES PREMIUM
------------------------------------------ */
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 14px 34px;
-  min-width: 220px; /* ancho mínimo elegante */
-  border-radius: 12px;
-
-  background: #c6a667;
-  color: #fff;
-
-  font-family: "Inter", sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
-  letter-spacing: 0.3px;
-
-  border: none;
-  cursor: pointer;
-
-  transition: all 0.35s ease;
-  box-shadow: 0 6px 18px rgba(198, 166, 103, 0.25);
-}
-
-.btn svg {
-  width: 20px;
-  height: 20px;
-  stroke: #fff;
-  stroke-width: 2;
-  transition: transform 0.35s ease;
-}
-
-.btn:hover {
-  background: #a88b4f;
-  box-shadow: 0 10px 26px rgba(168, 139, 79, 0.35);
-  transform: translateY(-2px);
-}
-
-.btn:hover svg {
-  transform: translateX(4px);
-}
-
-/* Versión outline (si la necesitas más adelante) */
-.btn-outline {
-  background: transparent;
-  color: #c6a667;
-  border: 2px solid #c6a667;
-  box-shadow: none;
-}
-
-.btn-outline svg {
-  stroke: #c6a667;
-}
-
-.btn-outline:hover {
-  background: #c6a667;
-  color: #fff;
-}
-
-.btn-outline:hover svg {
-  stroke: #fff;
 }
 
 /* -----------------------------------------
@@ -180,12 +93,17 @@ svg {
   transform: none !important;
 }
 
-.nav nav ul {
+/* Desktop nav */
+.nav-links {
+  display: block;
+}
+
+.nav-links ul {
   display: flex;
   gap: 40px;
 }
 
-.nav nav ul li a {
+.nav-links a {
   color: #c6a667;
   font-weight: 600;
   display: flex;
@@ -194,7 +112,7 @@ svg {
   transition: color 0.3s ease;
 }
 
-.nav nav ul li a:hover {
+.nav-links a:hover {
   color: #a88b4f;
 }
 
@@ -239,14 +157,16 @@ svg {
 }
 
 /* -----------------------------------------
-   NAV MOBILE
+   NAV MOBILE — SOLUCIÓN DEFINITIVA
 ----------------------------------------- */
 @media (max-width: 900px) {
   .menu-toggle {
     display: block;
   }
 
+  /* Menú oculto por defecto */
   .nav-links {
+    display: none; /* ← CLAVE */
     position: absolute;
     top: 80px;
     right: 20px;
@@ -255,31 +175,26 @@ svg {
     border-radius: 14px;
     padding: 20px;
     width: 220px;
+
     opacity: 0;
     pointer-events: none;
     transform: translateY(-10px);
+
     transition: all 0.35s ease;
     box-shadow: 0 12px 28px rgba(198, 166, 103, 0.25);
   }
 
+  /* Menú abierto */
   .nav-links.open {
+    display: block; /* ← CLAVE */
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
   }
 
   .nav-links ul {
-    display: flex;
     flex-direction: column;
     gap: 18px;
-  }
-
-  .nav-links a {
-    font-weight: 600;
-    color: #c6a667;
-    display: flex;
-    align-items: center;
-    gap: 8px;
   }
 }
 
@@ -287,13 +202,13 @@ svg {
    SECCIONES
 ----------------------------------------- */
 .section {
-  padding: 100px 60px; /* antes 160px arriba */
-  min-height: auto;
+  padding: 100px 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
 }
+
 @media (max-width: 600px) {
   .section {
     padding: 60px 24px;
@@ -332,15 +247,9 @@ svg {
   border-radius: 4px;
 }
 
-.hero-head {
-  width: 100%;
-  margin-bottom: 40px;
-}
-
 /* -----------------------------------------
    COLECCIÓN
 ----------------------------------------- */
-
 .collection {
   text-align: center;
 }
@@ -361,45 +270,6 @@ svg {
   margin-top: 60px;
 }
 
-.collection .item {
-  background: #fff;
-  border: none;
-  border-radius: 18px;
-  padding: 24px;
-  transition: all 0.4s ease;
-}
-
-.collection .item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(198, 166, 103, 0.25);
-}
-
-.collection .image-wrapper {
-  overflow: hidden;
-  border-radius: 14px;
-  border: 2px solid #c6a667;
-}
-
-.collection .image-wrapper img {
-  width: 100%;
-  aspect-ratio: 3 / 5;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-.collection .item:hover img {
-  transform: scale(1.05);
-}
-
-.collection h3 {
-  font-size: 1.3rem;
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-
 /* -----------------------------------------
    ANIMACIONES SCROLL
 ----------------------------------------- */
@@ -417,96 +287,80 @@ svg {
 }
 
 /* -----------------------------------------
-   RESPONSIVE
+   RESPONSIVE FINO
 ----------------------------------------- */
 @media (max-width: 1200px) {
   .section {
-    padding: 140px 40px 80px;
+    padding: 110px 40px 70px;
+  }
+  .hero-inner {
+    gap: 40px;
+  }
+  .hero h1 {
+    font-size: 3rem;
+  }
+  .hero-image img {
+    width: 420px;
+  }
+  .collection .grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 900px) {
+  .nav {
+    padding: 16px 28px;
+  }
   .hero-inner {
     flex-direction: column;
     text-align: center;
   }
-
+  .hero-image {
+    max-width: 420px;
+    margin: 0 auto;
+  }
   .collection .grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .nav {
-    padding: 18px 40px;
   }
 }
 
 @media (max-width: 600px) {
   .nav {
-    padding: 16px 24px;
+    padding: 14px 18px;
   }
-
-  .section {
-    padding: 120px 24px 60px;
+  .logo-text {
+    font-size: 1.2rem;
   }
-
   .hero h1 {
-    font-size: 2.4rem;
+    font-size: 2.3rem;
   }
-
   .hero p {
-    font-size: 1rem;
+    font-size: 0.98rem;
   }
-
+  .btn {
+    width: 100%;
+    min-width: 0;
+  }
   .collection .grid {
     grid-template-columns: 1fr;
   }
 }
 
-/* -----------------------------------------
-   LÍNEA DORADA ULTRA PREMIUM — efecto glide
------------------------------------------ */
-
-.section {
-  position: relative;
-}
-
-/* Línea inicial: extremadamente fina, casi invisible */
-.section::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-
-  width: 0%;
-  height: 1px; /* más fina */
-  background: linear-gradient(
-    90deg,
-    rgba(198, 166, 103, 0) 0%,
-    rgba(198, 166, 103, 0.9) 40%,
-    rgba(198, 166, 103, 1) 60%,
-    rgba(198, 166, 103, 0) 100%
-  );
-
-  opacity: 0;
-  transform: translateY(2px); /* efecto flotante */
-  transition:
-    width 0.9s cubic-bezier(0.25, 0.1, 0.25, 1),
-    opacity 0.4s ease,
-    transform 0.6s ease;
-  pointer-events: none;
-}
-
-/* Hover: línea se desplaza suavemente de izquierda a derecha */
-.section:hover::after {
-  width: 100%;
-  opacity: 1;
-  transform: translateY(0);
+@media (max-width: 420px) {
+  .logo-icon {
+    height: 34px;
+  }
+  .logo-text {
+    font-size: 1.05rem;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
 }
 
 /* -----------------------------------------
-   FOOTER PREMIUM EDITORIAL
+   FOOTER PREMIUM
 ----------------------------------------- */
-
 .footer {
   background: #111;
   color: #eee;
@@ -524,7 +378,6 @@ svg {
   font-family: "Playfair Display", serif;
   font-size: 2rem;
   color: #c6a667;
-  letter-spacing: 1px;
   font-weight: 700;
 }
 
@@ -551,7 +404,6 @@ svg {
 .footer-links a {
   color: #c6a667;
   font-weight: 600;
-  font-size: 0.95rem;
   transition: color 0.3s ease;
 }
 
@@ -564,7 +416,6 @@ svg {
   font-size: 0.85rem;
 }
 
-/* Botón volver a DRAFT */
 .footer-draft {
   margin-top: 40px;
 }
@@ -595,4 +446,231 @@ svg {
 .btn-draft:hover svg {
   stroke: #fff;
   transform: translateX(-4px);
+}
+
+/* -----------------------------------------
+   BOTONES PREMIUM
+----------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 34px;
+  min-width: 220px;
+  border-radius: 12px;
+
+  background: #c6a667;
+  color: #fff;
+
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+
+  border: none;
+  cursor: pointer;
+
+  transition: all 0.35s ease;
+  box-shadow: 0 6px 18px rgba(198, 166, 103, 0.25);
+}
+
+.btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: #fff;
+  stroke-width: 2;
+  margin-right: 8px;
+  transition: transform 0.35s ease;
+}
+
+.btn:hover {
+  background: #a88b4f;
+  box-shadow: 0 10px 26px rgba(168, 139, 79, 0.35);
+  transform: translateY(-2px);
+}
+
+.btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* -----------------------------------------
+   BOTÓN OUTLINE PREMIUM
+----------------------------------------- */
+.btn-outline {
+  background: transparent;
+  color: #c6a667;
+  border: 2px solid #c6a667;
+  box-shadow: none;
+}
+
+.btn-outline svg {
+  stroke: #c6a667;
+}
+
+.btn-outline:hover {
+  background: #c6a667;
+  color: #fff;
+}
+
+.btn-outline:hover svg {
+  stroke: #fff;
+}
+
+/* -----------------------------------------
+   BOTÓN FOOTER (Volver a DRAFT)
+----------------------------------------- */
+.btn-draft {
+  background: transparent;
+  border: 2px solid #c6a667;
+  color: #c6a667;
+  padding: 12px 26px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  transition: all 0.35s ease;
+}
+
+.btn-draft svg {
+  stroke: #c6a667;
+  transition: transform 0.35s ease;
+}
+
+.btn-draft:hover {
+  background: #c6a667;
+  color: #fff;
+}
+
+.btn-draft:hover svg {
+  stroke: #fff;
+  transform: translateX(-4px);
+}
+
+/* -----------------------------------------
+   RESPONSIVE BOTONES
+----------------------------------------- */
+@media (max-width: 600px) {
+  .btn {
+    width: 100%;
+    min-width: 0;
+    padding: 14px 20px;
+  }
+}
+
+/* -----------------------------------------
+   EFECTO 1 — SHIMMER DORADO (luxury)
+----------------------------------------- */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: all 0.6s ease;
+}
+
+.btn:hover::after {
+  left: 120%;
+}
+
+/* -----------------------------------------
+   EFECTO 2 — GLOSS SUAVE (reflejo editorial)
+----------------------------------------- */
+.btn {
+  background: linear-gradient(180deg, #c6a667 0%, #b8955a 100%);
+}
+
+.btn:hover {
+  background: linear-gradient(180deg, #a88b4f 0%, #8f7440 100%);
+}
+
+/* -----------------------------------------
+   EFECTO 3 — MICRO-PRESS (clic táctil premium)
+----------------------------------------- */
+.btn:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 4px 12px rgba(168, 139, 79, 0.25);
+}
+
+/* -----------------------------------------
+   EFECTO PREMIUM PARA .btn-outline
+----------------------------------------- */
+.btn-outline {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-outline::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(198, 166, 103, 0.35) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: all 0.6s ease;
+}
+
+.btn-outline:hover::after {
+  left: 120%;
+}
+
+/* -----------------------------------------
+   IMÁGENES PREMIUM — borde dorado + esquinas
+----------------------------------------- */
+
+/* Todas las imágenes dentro de wrappers */
+.image-wrapper,
+.hero-image img,
+.collection .image-wrapper img,
+.testimonios img,
+.atelier img,
+.materiales img,
+.ubicacion img {
+  border-radius: 16px; /* esquinas suaves premium */
+  overflow: hidden;
+}
+
+/* Borde dorado fino */
+.image-wrapper,
+.hero-image img,
+.collection .image-wrapper,
+.testimonios img,
+.atelier img,
+.materiales img,
+.ubicacion img {
+  border: 2px solid rgba(198, 166, 103, 0.55); /* dorado suave */
+}
+
+/* Ajuste para que el borde no afecte al hover */
+.collection .image-wrapper img {
+  border: none !important;
+  border-radius: 14px;
+}
+
+/* Hover premium sin romper el borde */
+.collection .item:hover .image-wrapper {
+  border-color: rgba(198, 166, 103, 0.9);
+  transition: border-color 0.35s ease;
 }
