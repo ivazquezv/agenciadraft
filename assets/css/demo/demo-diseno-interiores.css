@@ -917,20 +917,18 @@ textarea {
   }
 }
 
+.hero {
+  padding-top: 5rem;
+}
 
-  .hero {
-    padding-top: 5rem;
-  }
+.grid--3,
+.grid--2,
+.timeline {
+  grid-template-columns: minmax(0, 1fr);
+}
 
-  .grid--3,
-  .grid--2,
-  .timeline {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .hero__meta {
-    gap: 0.6rem;
-  }
+.hero__meta {
+  gap: 0.6rem;
 }
 
 /* VERY SMALL SCREENS */
