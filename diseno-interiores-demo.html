@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio Interior — Diseño de Interiores</title>
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="stylesheet" href="/assets/css/demo/demo-diseno-interiores.css" />
+</head>
+
+<body>
+
+    <!-- Botón subir arriba -->
+    <button id="btn-top" aria-label="Volver al inicio">
+        <i class="ph ph-arrow-up"></i>
+    </button>
+
+    <!-- Header / Nav -->
+    <header class="header">
+        <div class="container header__inner">
+            <div class="logo">
+                <i class="ph ph-house-line" style="font-size:20px; margin-right:6px;"></i>
+                Studio<span>Interior</span>
+            </div>
+
+            <nav class="nav" id="nav">
+                <ul class="nav__list">
+                    <li><a href="#inicio"><i class="ph ph-sparkle"></i> Inicio</a></li>
+                    <li><a href="#servicios"><i class="ph ph-grid-four"></i> Servicios</a></li>
+                    <li><a href="#proyectos"><i class="ph ph-image"></i> Proyectos</a></li>
+                    <li><a href="#proceso"><i class="ph ph-steps"></i> Proceso</a></li>
+                    <li><a href="#equipo"><i class="ph ph-users-three"></i> Estudio</a></li>
+                    <li><a href="#contacto"><i class="ph ph-envelope"></i> Contacto</a></li>
+                </ul>
+            </nav>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <main id="inicio">
+        <section class="hero">
+            <div class="container hero__inner">
+
+                <div class="hero__content">
+                    <p class="hero__eyebrow">
+                        <i class="ph ph-squares-four"></i> Estudio boutique de diseño de interiores
+                    </p>
+
+                    <h1 class="hero__title">
+                        Creamos espacios que cuentan la historia de tu marca y tu hogar.
+                    </h1>
+
+                    <p class="hero__subtitle">
+                        Diseño integral de interiores residenciales y comerciales, desde el concepto hasta la ejecución.
+                    </p>
+
+                    <div class="hero__actions">
+                        <a href="#contacto" class="btn btn--primary">
+                            <i class="ph ph-calendar-check"></i> Consultoría
+                        </a>
+                        <a href="#proyectos" class="btn btn--ghost">
+                            <i class="ph ph-images"></i> Ver proyectos
+                        </a>
+                    </div>
+
+                    <div class="hero__meta">
+                        <span><i class="ph ph-star"></i> +10 años</span>
+                        <span><i class="ph ph-cube"></i> Renders 3D</span>
+                        <span><i class="ph ph-hammer"></i> Dirección de obra</span>
+                    </div>
+                </div>
+
+                <div class="hero__visual">
+                    <div class="hero__card parallax-mouse">
+                        <div class="hero__tag">
+                            <i class="ph ph-fire"></i> Proyecto destacado
+                        </div>
+                        <h2>Ático Luz Norte</h2>
+                        <p>Reforma integral en tonos neutros y madera natural.</p>
+                    </div>
+
+                    <div class="hero__circle parallax-mouse"></div>
+
+                    <div class="hero__floating-label">
+                        <i class="ph ph-paint-brush"></i> Interiorismo · Branding espacial
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Servicios -->
+        <section id="servicios" class="section section--light">
+            <div class="container">
+                <header class="section__header">
+                    <h2><i class="ph ph-grid-four"></i> Servicios de diseño</h2>
+                    <p>Desde concepto hasta ejecución completa.</p>
+                </header>
+
+                <div class="grid grid--3">
+
+                    <article class="card card--service scroll-reveal">
+                        <h3><i class="ph ph-house"></i> Diseño residencial</h3>
+                        <p>Viviendas a medida con distribución, iluminación y mobiliario.</p>
+                        <ul>
+                            <li>Reformas integrales</li>
+                            <li>Decoración</li>
+                            <li>Optimización de espacios</li>
+                        </ul>
+                    </article>
+
+                    <article class="card card--service scroll-reveal">
+                        <h3><i class="ph ph-storefront"></i> Espacios comerciales</h3>
+                        <p>Retail, oficinas y hostelería con narrativa de marca.</p>
+                        <ul>
+                            <li>Concepto espacial</li>
+                            <li>Experiencia de cliente</li>
+                            <li>Iluminación</li>
+                        </ul>
+                    </article>
+
+                    <article class="card card--service scroll-reveal">
+                        <h3><i class="ph ph-monitor"></i> Consultoría online</h3>
+                        <p>Asesoría estratégica sin obra compleja.</p>
+                        <ul>
+                            <li>Videollamada</li>
+                            <li>Moodboards</li>
+                            <li>Renders 3D</li>
+                        </ul>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Proyectos -->
+        <section id="proyectos" class="section">
+            <div class="container">
+                <header class="section__header">
+                    <h2><i class="ph ph-image"></i> Proyectos seleccionados</h2>
+                    <p>Espacios donde la luz y la calma son protagonistas.</p>
+                </header>
+
+                <div class="grid grid--3 projects">
+
+                    <article class="project-card scroll-reveal parallax-mouse">
+                        <div class="project-card__image project-card__image--1"></div>
+                        <div class="project-card__body">
+                            <h3><i class="ph ph-tree"></i> Casa Patio</h3>
+                            <p>Vivienda organizada alrededor de un patio interior.</p>
+                            <span class="project-card__tag">Residencial · 180 m²</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card scroll-reveal parallax-mouse">
+                        <div class="project-card__image project-card__image--2"></div>
+                        <div class="project-card__body">
+                            <h3><i class="ph ph-coffee"></i> Café Bruma</h3>
+                            <p>Local cálido con luz tenue y materiales naturales.</p>
+                            <span class="project-card__tag">Hostelería · 95 m²</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card scroll-reveal parallax-mouse">
+                        <div class="project-card__image project-card__image--3"></div>
+                        <div class="project-card__body">
+                            <h3><i class="ph ph-briefcase"></i> Estudio Norte</h3>
+                            <p>Oficina creativa con zonas colaborativas.</p>
+                            <span class="project-card__tag">Oficinas · 120 m²</span>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Proceso -->
+        <section id="proceso" class="section section--light">
+            <div class="container">
+                <header class="section__header">
+                    <h2><i class="ph ph-steps"></i> Proceso de trabajo</h2>
+                </header>
+
+                <div class="timeline">
+
+                    <div class="timeline__item scroll-reveal">
+                        <span class="timeline__step">01</span>
+                        <h3><i class="ph ph-chat-circle"></i> Descubrimiento</h3>
+                        <p>Reunión inicial y análisis de necesidades.</p>
+                    </div>
+
+                    <div class="timeline__item scroll-reveal">
+                        <span class="timeline__step">02</span>
+                        <h3><i class="ph ph-palette"></i> Moodboard</h3>
+                        <p>Concepto, materiales y referencias.</p>
+                    </div>
+
+                    <div class="timeline__item scroll-reveal">
+                        <span class="timeline__step">03</span>
+                        <h3><i class="ph ph-ruler"></i> Planos</h3>
+                        <p>Distribución, iluminación y documentación técnica.</p>
+                    </div>
+
+                    <div class="timeline__item scroll-reveal">
+                        <span class="timeline__step">04</span>
+                        <h3><i class="ph ph-hard-hat"></i> Obra</h3>
+                        <p>Coordinación con industriales y control de calidad.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Equipo -->
+        <section id="equipo" class="section">
+            <div class="container team">
+
+                <div class="team__content">
+                    <h2><i class="ph ph-users-three"></i> El estudio</h2>
+                    <p>Especialistas en espacios serenos, luminosos y atemporales.</p>
+                    <p>Trabajamos con artesanos y arquitectos para materializar cada detalle.</p>
+                </div>
+
+                <div class="team__photo parallax-mouse scroll-reveal">
+                    <div class="team__badge">
+                        <i class="ph ph-check-circle"></i> +120 proyectos
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Testimonios -->
+        <section class="section section--light">
+            <div class="container">
+                <header class="section__header">
+                    <h2><i class="ph ph-quotes"></i> Opiniones</h2>
+                </header>
+
+                <div class="grid grid--2 testimonials">
+
+                    <article class="testimonial scroll-reveal">
+                        <p>“Transformaron por completo nuestra casa.”</p>
+                        <span class="testimonial__author">
+                            <i class="ph ph-user"></i> Laura & Miguel
+                        </span>
+                    </article>
+
+                    <article class="testimonial scroll-reveal">
+                        <p>“El diseño del local ha mejorado la experiencia del cliente.”</p>
+                        <span class="testimonial__author">
+                            <i class="ph ph-storefront"></i> Café Bruma
+                        </span>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section id="contacto" class="section section--accent">
+            <div class="container contact">
+
+                <div class="contact__content">
+                    <h2><i class="ph ph-envelope"></i> Cuéntanos tu proyecto</h2>
+                    <p>Te responderemos en 24–48 horas.</p>
+
+                    <ul class="contact__meta">
+                        <li><i class="ph ph-map-pin"></i> Madrid · Proyectos en toda España</li>
+                        <li><i class="ph ph-envelope-simple"></i> hola@studiointerior.es</li>
+                        <li><i class="ph ph-clock"></i> L–V · 9:00–18:00</li>
+                    </ul>
+                </div>
+
+                <form class="contact__form">
+                    <div class="form__group">
+                        <label for="nombre">Nombre</label>
+                        <input id="nombre" type="text" placeholder="Tu nombre completo" required />
+                    </div>
+
+                    <div class="form__group">
+                        <label for="email">Email</label>
+                        <input id="email" type="email" placeholder="tu@email.com" required />
+                    </div>
+
+                    <div class="form__group">
+                        <label for="tipo">Tipo de proyecto</label>
+                        <select id="tipo">
+                            <option>Vivienda</option>
+                            <option>Local comercial</option>
+                            <option>Oficina</option>
+                            <option>Consultoría online</option>
+                        </select>
+                    </div>
+
+                    <div class="form__group">
+                        <label for="mensaje">Cuéntanos más</label>
+                        <textarea id="mensaje" rows="4" placeholder="Superficie, ubicación, estilo..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary btn--full">
+                        <i class="ph ph-paper-plane-tilt"></i> Enviar consulta
+                    </button>
+                </form>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container footer__inner">
+            <p>
+                <i class="ph ph-copyright"></i>
+                <span id="year"></span> Studio Interior
+            </p>
+            <p><i class="ph ph-paint-brush"></i> Diseño de interiores · Branding espacial</p>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const navToggle = document.getElementById('nav-toggle');
+        const nav = document.getElementById('nav');
+
+        navToggle.addEventListener('click', () => {
+            nav.classList.toggle('nav--open');
+            navToggle.classList.toggle('nav-toggle--open');
+        });
+
+        document.querySelectorAll('.nav__list a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('nav--open');
+                navToggle.classList.remove('nav-toggle--open');
+            });
+        });
+
+        const btnTop = document.getElementById('btn-top');
+        const footer = document.getElementById('footer');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    btnTop.classList.add('btn-top--visible');
+                } else {
+                    btnTop.classList.remove('btn-top--visible');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        observer.observe(footer);
+
+        btnTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+        const revealObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('scroll-reveal--visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        const parallaxItems = document.querySelectorAll('.parallax-mouse');
+        document.addEventListener('mousemove', e => {
+            const x = (e.clientX / window.innerWidth - 0.5) * 2;
+            const y = (e.clientY / window.innerHeight - 0.5) * 2;
+
+            parallaxItems.forEach((item, index) => {
+                const intensity = (index + 1) * 4;
+                item.style.transform = `translate3d(${x * intensity}px, ${y * intensity}px, 0)`;
+            });
+        });
+    </script>
+
+</body>
+
+</html>
